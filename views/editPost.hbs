@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="/newPost.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="container_top">
+            <ul class="nav_list">
+                <li class="list_el"><a href="/">Home</a></li>
+                <li class="list_el"><a href="/newPost">New post</a></li>
+                <li class="list_el"><a href="/getAllPosts">Posts</a></li>
+            </ul>
+        </div>
+        <div class="conainer_main">
+            <h2>Create your new post</h2>
+            <form action="/api/updatePost/{{post._id}}" method="POST" class="newPost_form">
+                <div class="small_items">
+                    <div class="title_item">
+                        <label for="title">Post title</label>
+                        <textarea type="text" id="title" name="title" >{{post.title}}</textarea>
+                    </div>
+
+                    <div class="author_item">
+                        <label for="author">Post author</label>
+                        <textarea type="text" id="author" name="author" >{{post.author}}</textarea>
+                    </div>
+                </div>
+
+                <div class="text_item">
+                    <label for="text">Post text</label>
+                    <textarea type="text" id="text" name="text" >{{post.text}}</textarea>
+                </div>
+                <button type="submit" class="btn">SAVE</button>
+            </form>
+
+            <form class="del" action="/api/deletePost/{{post._id}}" method="POST">
+            <button class="btn" type="submit">DELETE POST</button>
+            </form>
+            
+            <button class="btn" onclick="location.href='/api/watchJSON/{{post._id}}'">WATCH JSON</button>
+        </div>
+    </div>
+
+</body>
+
+</html>

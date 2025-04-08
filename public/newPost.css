@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  height: 100%;
+  background-image: url("img/background.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5%;
+}
+
+.container_top {
+  height: 10%;
+  background-color: #303133;
+}
+.nav_list {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  height: 100%;
+  align-items: center;
+  padding-right: 2%;
+  list-style: none;
+}
+
+.list_el {
+  margin-right: 3%;
+  margin-left: 3%;
+  font-size: 28px;
+}
+
+a {
+  text-decoration: none;
+  color: #8f8f8f;
+}
+
+.list_el a {
+  text-decoration: none;
+  color: #8f8f8f;
+  font-weight: bold;
+}
+
+.conainer_main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 32px;
+  height: 70%;
+  gap: 5%;
+  color: #8f8f8f;
+  margin-left: 5%;
+}
+.conainer_main h2 {
+  text-shadow: 8px 8px 5px #050505;
+  align-self: center;
+  height: 15%;
+}
+
+.newPost_form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  gap: 3%;
+}
+
+label {
+  margin-bottom: 1%;
+}
+
+textarea {
+  background-color: #5a655e;
+  font-size: 24px;
+  color: #303133;
+}
+
+.title_item textarea,
+.author_item textarea {
+  width: 90%;
+  height: 40%;
+}
+
+.text_item textarea {
+  height: 80%;
+  width: 95%;
+}
+
+.small_items {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 30%;
+}
+
+.newPost_form .title_item,
+.author_item,
+.text_item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.btn {
+  background-color: #303133;
+  color: #8f8f8f;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: none;
+  box-shadow: none;
+  border-radius: 5px;
+  border: 2px solid #8f8f8f;
+  border-color: #8f8f8f;
+  width: 95%;
+  margin-top: 5px;
+}
+
+.btn:hover {
+  background-color: #8f8f8f;
+  border-color: #303133;
+  color: #303133;
+  box-shadow: none;
+}
+
+.del {
+  width: 100%;
+}

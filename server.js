@@ -4,6 +4,10 @@ const axios = require("axios");
 const path = require("path");
 const hbs = require("hbs");
 
+const { graphqlHTTP } = require("express-graphql");
+const schema = require("./graphql/schema");
+const root = require("./graphql/resolvers");
+
 const app = express();
 const PORT = 3000;
 
@@ -21,8 +25,8 @@ mongoose
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
-  .then(() => console.log("✅"))
-  .catch((err) => console.error("❌", err));
+  .then(() => console.log("DB connected"))
+  .catch((err) => console.error("DB not connected", err));
 
 app.use("/", require("./routes/routes"));
 app.use("/newPost", require("./routes/routes"));
@@ -30,6 +34,15 @@ app.use("/getAllPosts", require("./routes/routes"));
 app.use("/editPost/:id", require("./routes/routes"));
 
 app.use("/api", require("./routes/api_routes"));
+
+app.use(
+  "/graphql",
+  graphqlHTTP({
+    schema,
+    rootValue: root,
+    graphiql: true,
+  })
+);
 
 app.listen(PORT, () => {
   console.log(`Server: http://localhost:${PORT}`);
